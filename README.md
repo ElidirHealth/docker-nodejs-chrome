@@ -10,4 +10,4 @@ XVFB removed as can now run chrome headless
 
 # To Run
 
-    $ docker run -it --rm -v $(pwd):/src -w /src -e NODE_ENV=CI elidirhealth/nodejs-karma npm -v
+    $ docker run -it --rm -v $(pwd):/src -w /src -e NODE_ENV=CI elidirhealth/nodejs-chrome npm -v
