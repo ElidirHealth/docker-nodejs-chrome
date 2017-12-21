@@ -10,7 +10,6 @@ RUN apt-get update; \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*; \
     npm install -g grunt
 
-ADD xvfb.sh /etc/init.d/xvfb
 ADD entrypoint.sh /entrypoint.sh
 
 ENV DISPLAY :99.0

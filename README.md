@@ -3,10 +3,10 @@
 A [Docker](https://www.docker.com/) container with
 
 - node.js 9.x
-- chrome for karma headless testing
+- chrome 
 - grunt
 
-
+XVFB removed as can now run chrome headless
 
 # To Run
 
