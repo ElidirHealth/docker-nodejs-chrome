@@ -3,11 +3,12 @@ FROM openjdk:8u121-jdk
 MAINTAINER Nicola Molinari <emmenko@gmail.com>
 
 RUN apt-get update; \
-    curl -sL https://deb.nodesource.com/setup_5.x | bash -; \
+    curl -sL https://deb.nodesource.com/setup_9.x | bash -; \
     curl https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - ; \
-    sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'; \
+    sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list';  \
     apt-get update && apt-get install -y google-chrome-stable nodejs Xvfb; \
-    apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+    apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*; \
+    npm install -g grunt
 
 ADD xvfb.sh /etc/init.d/xvfb
 ADD entrypoint.sh /entrypoint.sh
