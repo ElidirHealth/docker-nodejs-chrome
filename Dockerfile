@@ -8,7 +8,8 @@ RUN apt-get update; \
     sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list';  \
     apt-get update && apt-get install -y google-chrome-stable nodejs Xvfb; \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*; \
-    npm install -g grunt
+    npm install -g grunt \
+    npm install -g bower
 
 ADD entrypoint.sh /entrypoint.sh
 
